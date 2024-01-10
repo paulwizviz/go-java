@@ -1,14 +1,16 @@
-# Use Case
+# Overview
 
-Using Java, write a simple program that calculates the price of a basket of shopping.
+This repository shows a side-by-side comparison of the steps involved in creating the same application in Go and Java. The focus of the comparison is the effort invovle in working with the source code **NOT** the executable (size, execution speed, etc).
 
-The solution should be accomplished in roughly two hours.
+We'll use the process of creating application to simulate a shopping cart as a basis for comparison.
 
-Items are presented one at a time, in a list, identified by name - for example "Apple" or "Banana".
+## The shopping cart requirement
 
-Multiple items are present multiple times in the list, so for example ["Apple", "Apple", "Banana"] is a basket with two apples and one banana.
+Items are presented one at a time, in a list, identified by name - for example "Apple" or "Banana" - to the cart.
+
+Alternatively, multiple items are present multiple times in the list, so for example ["Apple", "Apple", "Banana"] is a basket with two apples and one banana.
  
-Items are priced as follows:
+The items are priced as follows:
 
  - Apples are 35p each
  - Bananas are 20p each
@@ -17,25 +19,8 @@ Items are priced as follows:
 
 Given a list of shopping, calculate the total cost of those items.
 
-## Solutions
+## Implementation
 
-There are two solutions: one in Go and the other in Pure Java.
+For the purpose of comparisons, both Go and Java are implemented based on a monorepo architecture. In the case of Java, we have opted to use Gradle and to use only Java with no framework (e.g. Spring)
 
-For the Go version (install Go):
-
-   1) Run the unit test, `cd go` and run the command `go test -v ./...`
-   2) Run the application, run the command `go run main.go`
-
-The Java version is replicated from Go. There is a precompiled Java class. To run the app from project root:
-
-`java -cp jdk/src/main/java com.pjs.shoppingcart.ShoppingCart`
-
-NOTE:
-
-1. Both version of has a hard coded basket consisting of:
-
-`["Apple", "Apple", "Banana", "Melon", "Melon", "Lime", "Lime", "Lime"]`
-
-Which should add up to a total cost of `170p`
-
-2. I am not familiar with Java Unit test hence relies on Go unit tests
+We will only implement a CLI base app where the app is given a list of fruits and the total is displayed as console output.
